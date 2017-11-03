@@ -1,4 +1,4 @@
-// 1-lin-ss2tf-6
+// 1-lin-ss2tf-6.sce
 // Obtención de la función de transferencia a partir de un modelo teórico
 // RCMP exotérmico encamisado
 clear; clc;
