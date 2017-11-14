@@ -19,12 +19,12 @@ plot(t,yexp,'ro'); xgrid; xtitle('Salida', 't', 'y');
 
 koptguess = [1 1 1 1];
 k = koptguess;
-G = syslin('c', (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1));
+G = (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1);
 ycaloptguess = csim(u,t,G);
 plot(t,ycaloptguess,'g-');
 
 function obj = f(k)
-    G = syslin('c', (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1))
+    G = (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1);
     ycal = csim(u,t,G)
     obj = sum((yexp - ycal).^2)
 endfunction
@@ -32,6 +32,6 @@ endfunction
 [kopt,objmin,exitflag,output] = fminsearch(f,koptguess)
 
 k = kopt;
-G = syslin('c', (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1))
+G = (k(1)*s+k(2))/(k(3)*s^2+k(4)*s+1)
 ycalopt = csim(u,t,G);
 plot(t,ycalopt);
