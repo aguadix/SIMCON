@@ -4,7 +4,7 @@
 clear; clc; s = %s;
 
 K = 1; tau = 5; zeta = 0.3;
-G = K/(tau^2*s^2 + 2*tau*zeta*s + 1)
+G = syslin('c',K/(tau^2*s^2 + 2*tau*zeta*s + 1))
 polos = roots(denom(G))
 
 scf(1); clf(1); 
