@@ -12,7 +12,7 @@ function pade = pade(td,n)
 endfunction
 
 K = 3; tau = 2; td = 10; n = 5;
-G = K*pade(td,n)/(tau*s+1)
+G = syslin('c',K*pade(td,n)/(tau*s+1))
 
 u = 'step';
 dt = 0.01; tfin = td + 5*tau; t = 0:dt:tfin;
