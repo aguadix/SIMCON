@@ -31,4 +31,3 @@ endfunction
 u = F;
 SL = lin(SNL,xee,u)
 G = ss2tf(SL)
-
