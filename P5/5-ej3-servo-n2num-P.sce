@@ -47,24 +47,3 @@ offset = 1 - yee
 scf(3); clf(3); 
 plot(t,y); 
 xgrid; xtitle('Servomecanismo', 't', 'y');
-
-
-// DOMINIO DE LA FRECUENCIA
-
-// Márgenes de ganancia y fase
-[MgdB,fcf] = g_margin(Gol)
-Mg = 10^(MgdB/20)
-
-[Mf,fcg] = p_margin(Gol)
-tdmax = Mf/(fcg*360)
-
-scf(4); clf(4); 
-show_margins(Gol);
-
-// Resonancia
-fr = freson(Gcl)
-//[dBmax,phir] = dbphi(repfreq(Gcl,fr))
-
-scf(5); clf(5); 
-gainplot(Gcl)
-//plot(fr,dBmax,'ro')

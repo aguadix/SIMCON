@@ -20,7 +20,6 @@ inicio = roots(denom(Grl))
 fin = roots(numer(Grl))
 
 Kc2 = krac2(Grl) // Kc para polos reales dobles
-[Kcu,omegaui] = kpure(Grl) // Kc para polos imaginarios puros
 
 Kcmax = 12;
 scf(1); clf(1); 
@@ -47,24 +46,3 @@ offset = 0 - yee
 scf(3); clf(3); 
 plot(t,y); 
 xgrid; xtitle('Regulador', 't', 'y');
-
-
-// DOMINIO DE LA FRECUENCIA
-
-// Márgenes de ganancia y fase
-[MgdB,fcf] = g_margin(Gol)
-Mg = 10^(MgdB/20)
-
-[Mf,fcg] = p_margin(Gol)
-tdmax = Mf/(fcg*360)
-
-scf(4); clf(4); 
-show_margins(Gol);
-
-// Resonancia
-fr = freson(Gcl)
-//[dBmax,phir] = dbphi(repfreq(Gcl,fr))
-
-scf(5); clf(5); 
-gainplot(Gcl)
-//plot(fr,dBmax,'ro')
