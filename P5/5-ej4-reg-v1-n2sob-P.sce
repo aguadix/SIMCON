@@ -63,8 +63,8 @@ show_margins(Gol);
 
 // Resonancia
 fr = freson(Gcl)
-//[dBmax,phir] = dbphi(repfreq(Gcl,fr))
+[dBmax,phir] = dbphi(repfreq(Gcl,fr))
 
 scf(5); clf(5); 
 gainplot(Gcl)
-//plot(fr,dBmax,'ro')
+plot(fr,dBmax,'ro')
