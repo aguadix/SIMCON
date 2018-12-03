@@ -18,6 +18,9 @@ Grl = syslin('c',Gv*Gp*Gm)
 inicio = roots(denom(Grl))
 fin = roots(numer(Grl))
 
+Kc2 = krac2(Grl) // Kc para polos reales dobles
+[Kcu,omegaui] = kpure(Grl) // Kc para polos imaginarios puros
+
 Kcmax = 10;
 scf(1); clf(1); 
 evans(Grl,Kcmax); 
