@@ -4,7 +4,7 @@ clear; clc; s = %s;
 // DOMINIO DE LAPLACE
 
 // Elementos del sistema
-Kc = 2; P = Kc; I = 0; D = 0; Gc = P + I/s + D*s // Control P
+Kc = 19.8; P = Kc; I = 0; D = 0; Gc = P + I/s + D*s // Control P
 Kv = 1; tauv = 0.5; Gv = Kv/(tauv*s+1); // Válvula de primer orden
 Kp = 1; taup1 = 1; taup2 = 5; Gp = Kp/((taup1*s+1)*(taup2*s+1)); // Proceso de segundo orden sobreamortiguado(entrada manipulada)
 Kd = 2; Gd = Kd/((taup1*s+1)*(taup2*s+1)); // Proceso de segundo orden sobreamortiguado (entrada perturbación)
