@@ -18,13 +18,13 @@ Gm = 1; // Medida ideal
 // SINTONIZACIÓN
 
 // Ziegler-Nichols
-Kc = taup/(Kp*td); P = Kc; I = 0; D = 0; // P
+//Kc = taup/(Kp*td); P = Kc; I = 0; D = 0; // P
 //Kc = 0.9*taup/(Kp*td); taui = 3.3*td; P = Kc; I = Kc/taui; D = 0; // PI
 //Kc = 1.2*taup/(Kp*td); taui = 2*td; taud = 0.5*td; P = Kc; I = Kc/taui; D = Kc*taud; // PID
 
 // Cohen-Coon
 //Kc = taup/(Kp*td)*(1+td/(3*taup)); P = Kc; I = 0; D = 0; // P
-//Kc = taup/(Kp*td)*(0.9+td/(12*taup)); taui = td*(30+3*td/taup)/(9+20*td/taup); P = Kc; I = Kc/taui; D = 0; // PI
+Kc = taup/(Kp*td)*(0.9+td/(12*taup)); taui = td*(30+3*td/taup)/(9+20*td/taup); P = Kc; I = Kc/taui; D = 0; // PI
 //Kc = taup/(Kp*td)*(1.33+td/(4*taup)); taui = td*(32+6*td/taup)/(13+8*td/taup); taud = 4*td/(11+2*td/taup); P = Kc; I = Kc/taui; D = Kc*taud; // PID
 
 Gc = P + I/s + D*s

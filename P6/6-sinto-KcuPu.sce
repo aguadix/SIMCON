@@ -17,8 +17,8 @@ omegau = abs(omegaui)
 Pu = 2*%pi/omegau
 
 // Ziegler-Nichols
-Kc = 0.50*Kcu; P = Kc; I = 0; D = 0; // P
-//Kc = 0.45*Kcu; taui = 0.83*Pu; P = Kc; I = Kc/taui; D = 0;// PI
+//Kc = 0.50*Kcu; P = Kc; I = 0; D = 0; // P
+Kc = 0.45*Kcu; taui = 0.83*Pu; P = Kc; I = Kc/taui; D = 0;// PI
 //Kc = 0.60*Kcu; taui = 0.50*Pu; taud = 0.13*Pu; P = Kc; I = Kc/taui; D = Kc*taud; // PID
 
 // Tyreus-Luyben
