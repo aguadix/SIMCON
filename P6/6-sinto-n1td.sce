@@ -80,5 +80,5 @@ show_margins(Gol);
 fr = freson(Gcl)
 [dBmax,phir] = dbphi(repfreq(Gcl,fr))
 scf(5); clf(5); 
-gainplot(Gcl)
-plot(fr,dBmax,'ro')
+gainplot(Gcl);
+plot(fr,dBmax,'ro');
