@@ -1,7 +1,5 @@
 # SIMCON
- Simulación y Control de Procesos (Grado en Ingeniería Química)
- 
- Bloque de Control
+ Simulación y Control de Procesos, Grado en Ingeniería Química (2019-2020)
  
  [Guía docente](http://grados.ugr.es/iquimica/pages/infoacademica/gd1920/simcon1920)
  
