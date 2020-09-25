@@ -1,4 +1,4 @@
-# Simulación y Control de Procesos
+# SIMULACIÓN Y CONTROL DE PROCESOS
 
  Grado en Ingeniería Química (2020-2021)
  
