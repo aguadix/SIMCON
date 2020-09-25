@@ -1,10 +1,6 @@
-# SIMCON
+# Simulación y Control de Procesos
 
- Simulación y Control de Procesos
-
- Grado en Ingeniería Química
- 
- 2020-2021
+ Grado en Ingeniería Química (2020-2021)
  
  [Guía docente](https://iquimica.ugr.es/sites/departamentos_files/departamentos_iquimica/public/inline-files/2020-21_220_11_41_Simulacion_Control_Procesos.pdf)
 
