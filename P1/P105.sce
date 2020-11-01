@@ -1,5 +1,5 @@
 clear; clc;
-// P1-05.sce
+// P105.sce
 
 // (a) CÁLCULO DEL ESTADO ESTACIONARIO
 
@@ -18,12 +18,12 @@ function dxdt = f(x)
 endfunction
 
 // Constantes
-F = 10; // L/h
-CA0 = 10; // mol/L
-V = 10; // L
 k1 = 1.0; // h-1
 k2 = 1.5; // h-1
 k3 = 0.2; // L/(mol*h)
+V = 10; // L
+F = 10; // L/h
+CA0 = 10; // mol/L
 
 // Solución supuesta
 CAeeguess = 10; CBeeguess = 0; // mol/L
@@ -34,7 +34,7 @@ xee = fsolve(xeeguess,f);
 CAee = xee(1)
 CBee = xee(2)
 
-// (b) LINEALIZACIÓN EN TORNO AL ESTADO ESTACIONARIO
+// (b) LINEALIZACIÓN ALREDEDOR DEL ESTADO ESTACIONARIO
 
 // Derivadas parciales exactas
 a11 = -F/V - k1 - 2*k3*CAee
@@ -60,7 +60,8 @@ function dxdt = SNL(x)
 endfunction
 
 // Matriz jacobiana
-J = numderivative(SNL,[xee;F])
+u = F;
+J = numderivative(SNL,[xee;u])
 
 // Sistema lineal
 A = J(:,1:2)
