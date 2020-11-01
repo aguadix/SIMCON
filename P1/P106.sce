@@ -24,12 +24,12 @@ k0 = 2.5E10; // 1/s
 E = 2.1E4; // cal/mol
 H = -8E4; // cal/mol
 R = 1.987; // cal/(mol*K)
-CP = 0.8; // cal/(g*K)
+CP = 1; // cal/(g*K)
 RHO = 1000; // g/L
 V = 1500; // L
 F = 20; // L/s
-CA0 = 2.5; // mol/L
 T0 = 293; // K
+CA0 = 2.5; // mol/L
 TJ = 283; // K
 UA = 1E4; // cal/(K*s)
 
