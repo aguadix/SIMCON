@@ -1,6 +1,7 @@
 // 1-lin-ss2tf-1.sce
 // Obtención de la función de transferencia a partir de un modelo teórico
 // Tanque de balance
+// hay que cambiar
 clear; clc;
 
 F1 = 1; // m3/h
