@@ -8,8 +8,6 @@ function dxdt = f(x)
     // Variables
     CA = x(1)
     T  = x(2)
-    // Ecuación de Arrhenius
-    k = k0*exp(-E/(R*T))
     // Balance de materia para A
     dCAdt = F*(CA0-CA)/V - k0*exp(-E/(R*T))*CA
     // Balance de energía
