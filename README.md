@@ -14,4 +14,3 @@
 ## Bloque II. Control
 
 * Descarga de [Scilab](http://www.scilab.org/)
-* Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1TDeQDHIm9rNvplCiOlR4Mp-uJupkcyGd?usp=sharing) 
