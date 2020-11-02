@@ -44,11 +44,12 @@ a22 = -F/V - k2
 b11 = (CA0-CAee)/V
 b12 = -CBee/V
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     CA = x(1)
     CB = x(2)
+    // Variables de entrada
     F  = x(3)
     // Balance de materia para A
     dCAdt = F*(CA0-CA)/V - k1*CA - k3*CA^2

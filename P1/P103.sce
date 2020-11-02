@@ -33,10 +33,11 @@ CAee = xee
 A = -F/V - k
 B = F/V
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     CA = x(1)
+    // Variables de entrada
     CA0 = x(2)
     // Balance de materia
     dCAdt = F*(CA0-CA)/V - k*CA

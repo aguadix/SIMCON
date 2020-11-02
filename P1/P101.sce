@@ -8,7 +8,7 @@ function dxdt = f(x)
     // Variables
     h = x(1)
     // Balance de materia
-    dhdt = (F1 + F2 - k*sqrt(x(1)))/At
+    dhdt = (F1 + F2 - k*sqrt(h))/At
     // Derivadas
     dxdt(1) = dhdt
 endfunction
@@ -33,13 +33,14 @@ hee = xee
 A = -k/(2*At*sqrt(hee))
 B = 1/At
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     h = x(1)
+    // Variables de entrada
     F2 = x(2)
     // Balance de materia en el reactor 1
-    dhdt = (F1 + F2 - k*sqrt(x(1)))/At
+    dhdt = (F1 + F2 - k*sqrt(h))/At
     // Derivadas
     dxdt(1) = dhdt
 endfunction

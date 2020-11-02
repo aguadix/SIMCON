@@ -43,11 +43,12 @@ a22 = -F/V2 - k
 b11 = (CA0-CA1ee)/V1
 b12 = (CA1ee-CA2ee)/V2
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     CA1 = x(1)
     CA2 = x(2)
+    // Variables de entrada
     F = x(3)
     // Balance de materia en el reactor 1
     dCA1dt = F*(CA0-CA1)/V1 - k*CA1

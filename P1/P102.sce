@@ -36,10 +36,11 @@ Tee = xee
 A = -F/V - UA/(V*RHO*CP)
 B = F/V
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     T = x(1)
+    // Variables de entrada
     T0 = x(2)
     // Balance de energía
     dTdt = F*(T0-T)/V + UA*(TJ-T)/(V*RHO*CP)

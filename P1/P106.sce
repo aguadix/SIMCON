@@ -11,9 +11,9 @@ function dxdt = f(x)
     // Ecuación de Arrhenius
     k = k0*exp(-E/(R*T))
     // Balance de materia para A
-    dCAdt = F*(CA0-CA)/V - k*CA
+    dCAdt = F*(CA0-CA)/V - k0*exp(-E/(R*T))*CA
     // Balance de energía
-    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k*CA/(RHO*CP)
+    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k0*exp(-E/(R*T))*CA/(RHO*CP)
     // Derivadas
     dxdt(1) = dCAdt
     dxdt(2) = dTdt
@@ -46,19 +46,19 @@ Tee = xee(2)
 // (b) LINEALIZACIÓN ALREDEDOR DEL ESTADO ESTACIONARIO
 
 // Derivadas parciales exactas
-kee = k0*exp(-E/(R*Tee))
-a11 = -F/V - kee
-a12 = -CAee*kee*E/(R*Tee^2)
-a21 = -H*kee/(RHO*CP)
-a22 = -F/V - UA/(V*RHO*CP) -H*CAee*kee*E/(RHO*CP*R*Tee^2) 
+a11 = -F/V - k0*exp(-E/(R*Tee))
+a12 = -k0*CAee*exp(-E/(R*Tee))*E/(R*Tee^2)
+a21 = -H*k0*exp(-E/(R*Tee))/(RHO*CP)
+a22 = -F/V - UA/(V*RHO*CP) - H*k0*CAee/(RHO*CP)*exp(-E/(R*Tee))*E/(R*Tee^2) 
 b11 = 0
 b12 = UA/(V*RHO*CP)
 
-// Sistema invariante en el tiempo
+// Sistema no lineal
 function dxdt = SNL(x)
-    // Variables
+    // Variables de estado
     CA = x(1)
     T  = x(2)
+    // Variables de entrada
     TJ = x(3)
     // Ecuación de Arrhenius
     k = k0*exp(-E/(R*T))
