@@ -19,9 +19,9 @@
 
 Fecha       | Hora  | Evento
 ----------- | ----- | -------------
-Vie, 06-nov | 17:00 | Disponible el material del Tema 1
-Mar, 10-nov | 17:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
-Vie, 13-nov | 17:00 | Disponible el material del Tema 2
+~~Vie, 06-nov~~ | ~~17:00~~ | ~~Disponible el material del Tema 1~~
+~~Mar, 10-nov~~ | ~~17:00~~ | ~~Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)~~
+~~Vie, 13-nov~~ | ~~17:00~~ | ~~Disponible el material del Tema 2~~
 Mar, 17-nov | 17:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Vie, 20-nov | 17:00 | Disponible el material del Tema 3
 Mar, 24-nov | 17:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
