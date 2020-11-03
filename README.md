@@ -17,8 +17,34 @@
 
 * Calendario
 
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+Fecha     | Evento     | xxx
+--------- | ---------- | -------------
+Viernes   | 06/11/2020 | Disponible el material del Tema 1
+Martes    | 10/11/2020 | Tutoría colectiva a través de Google Meet
+Viernes   | 13/11/2020 | Disponible el material del Tema 2
+Martes    | 17/11/2020 | Tutoría colectiva a través de Google Meet
+Viernes   | 20/11/2020 | Disponible el material del Tema 3
+Martes    | 24/11/2020 | Tutoría colectiva a través de Google Meet
+Viernes   | 27/11/2020 | Tutoría colectiva a través de Google Meet
+Lunes     | 30/11/2020 | Tutoría colectiva a través de Google Meet
+Martes    | 01/12/2020 | Examen de los Temas 1-3
+Miércoles | 02/12/2020 | Disponible el material del Tema 4
+
+
+Miércoles | 09/12/2020 | Disponible el material del Tema 5
+Miércoles | 16/12/2020 | Disponible el material del Tema 6
+Miércoles | 23/12/2020 | Disponible el material del Tema 7
+
+
+
+
+
+Martes | 08/12/2020 | Tutoría colectiva a través de Google Meet
+Martes | 15/12/2020 | Tutoría colectiva a través de Google Meet
+Martes | 22/12/2020 | Tutoría colectiva a través de Google Meet
+
+Viernes | 08/01/2020 | Tutoría colectiva a través de Google Meet
+Lunes | 11/01/2020 | Tutoría colectiva a través de Google Meet
+
+Martes  | 12/01/2020 | Examen de los Temas 4-7
 
