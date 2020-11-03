@@ -17,25 +17,27 @@
 
 * Calendario
 
-Fecha     | Evento | xxx
+Día       | Fecha  | Evento
 --------- | ------ | -------------
 Viernes   | 06-nov | Disponible el material del Tema 1
-Martes    | 10-nov | Tutoría colectiva a través de Google Meet
+Martes    | 10-nov | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Viernes   | 13-nov | Disponible el material del Tema 2
-Martes    | 17-nov | Tutoría colectiva a través de Google Meet
+Martes    | 17-nov | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Viernes   | 20-nov | Disponible el material del Tema 3
-Martes    | 24-nov | Tutoría colectiva a través de Google Meet
-Viernes   | 27-nov | Tutoría colectiva a través de Google Meet
-Lunes     | 30-nov | Tutoría colectiva a través de Google Meet
+Martes    | 24-nov | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
+Viernes   | 27-nov | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
+Lunes     | 30-nov | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Martes    | 01-dic | Examen de los Temas 1-3
 Miércoles | 02-dic | Disponible el material del Tema 4
-Martes    | 08-dic | Tutoría colectiva a través de Google Meet
+Martes    | 08-dic | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Miércoles | 09-dic | Disponible el material del Tema 5
-Martes    | 15-dic | Tutoría colectiva a través de Google Meet
+Martes    | 15-dic | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Miércoles | 16-dic | Disponible el material del Tema 6
-Martes    | 22-dic | Tutoría colectiva a través de Google Meet
+Martes    | 22-dic | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Miércoles | 23-dic | Disponible el material del Tema 7
-Viernes   | 08-ene | Tutoría colectiva a través de Google Meet
-Lunes     | 11-ene | Tutoría colectiva a través de Google Meet
+Viernes   | 08-ene | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
+Lunes     | 11-ene | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Martes    | 12-ene | Examen de los Temas 4-7
+
+
 
