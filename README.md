@@ -17,8 +17,8 @@
 
 * Calendario
 
-   x   | Fecha       | Hora  | Evento
--------| ------- | ----- | -------------
+   x  | Fecha       | Hora  | Evento
+------| ----------- | ----- | -------------
 - [ ] | Lun, 09-nov | 17:00 | Disponible el material del Tema 1
 - [ ] | Mar, 10-nov | 17:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 - [ ] | Lun, 16-nov | 17:00 | Disponible el material del Tema 2
