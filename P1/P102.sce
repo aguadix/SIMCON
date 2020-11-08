@@ -6,11 +6,11 @@ clear; clc;
 // Sistema de ecuaciones algebraicas
 function dxdt = f(x)
     // Variables
-    T = x(1)
+    T = x
     // Balance de energía
     dTdt = F*(T0-T)/V + UA*(TJ-T)/(V*RHO*CP)
     // Derivadas
-    dxdt(1) = dTdt
+    dxdt = dTdt
 endfunction
 
 // Constantes
@@ -45,7 +45,7 @@ function dxdt = SNL(x)
     // Balance de energía
     dTdt = F*(T0-T)/V + UA*(TJ-T)/(V*RHO*CP)
     // Derivadas
-    dxdt(1) = dTdt
+    dxdt = dTdt
 endfunction
 
 // Matriz jacobiana

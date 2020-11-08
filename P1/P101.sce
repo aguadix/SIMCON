@@ -6,11 +6,11 @@ clear; clc;
 // Sistema de ecuaciones algebraicas
 function dxdt = f(x)
     // Variables
-    h = x(1)
+    h = x
     // Balance de materia
     dhdt = (F1 + F2 - k*sqrt(h))/At
     // Derivadas
-    dxdt(1) = dhdt
+    dxdt = dhdt
 endfunction
 
 // Constantes
@@ -42,7 +42,7 @@ function dxdt = SNL(x)
     // Balance de materia en el reactor 1
     dhdt = (F1 + F2 - k*sqrt(h))/At
     // Derivadas
-    dxdt(1) = dhdt
+    dxdt = dhdt
 endfunction
 
 // Matriz jacobiana

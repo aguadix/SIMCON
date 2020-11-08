@@ -6,11 +6,11 @@ clear; clc;
 // Sistema de ecuaciones algebraicas
 function dxdt = f(x)
     // Variables
-    CA = x(1)
+    CA = x
     // Balance de materia
     dCAdt = F*(CA0-CA)/V - k*CA
     // Derivadas
-    dxdt(1) = dCAdt
+    dxdt = dCAdt
 endfunction
 
 // Constantes
@@ -42,7 +42,7 @@ function dxdt = SNL(x)
     // Balance de materia
     dCAdt = F*(CA0-CA)/V - k*CA
     // Derivadas
-    dxdt(1) = dCAdt
+    dxdt = dCAdt
 endfunction
 
 // Matriz jacobiana
