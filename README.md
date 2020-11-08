@@ -8,12 +8,16 @@
 ## Bloque I. Simulación
 
 * Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1f5oBHUeEjwEuv7M8pTJEIiroGQr25Cw-?usp=sharing) 
-* Listas de reproducción en [YouTube](https://www.youtube.com/playlist?list=PLY7KaFBcCn-wRBAF-B86bEeSPU6pb234r)
+* Lista de reproducción en [YouTube](https://www.youtube.com/playlist?list=PLY7KaFBcCn-wRBAF-B86bEeSPU6pb234r)
 
 
 ## Bloque II. Control
 
 * Descarga de [Scilab](http://www.scilab.org/)
+
+* Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1TDeQDHIm9rNvplCiOlR4Mp-uJupkcyGd) 
+
+* Lista de reproducción en [YouTube](https://www.youtube.com/playlist?list=PLh3F9fU7h8w3jyU5WFMaUnO8hIjd5mght)
 
 * Calendario
 
