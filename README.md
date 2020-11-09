@@ -17,7 +17,7 @@
 
 * Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1TDeQDHIm9rNvplCiOlR4Mp-uJupkcyGd) 
 
-* Lista de reproducción en [YouTube](https://www.youtube.com/playlist?list=PLh3F9fU7h8w3jyU5WFMaUnO8hIjd5mght)
+* Lista de vídeos en [YouTube](https://www.youtube.com/playlist?list=PLh3F9fU7h8w3jyU5WFMaUnO8hIjd5mght)
 
 * Calendario
 
