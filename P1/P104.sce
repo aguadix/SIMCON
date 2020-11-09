@@ -41,7 +41,7 @@ a12 = 0
 a21 = F/V2 
 a22 = -F/V2 - k
 b11 = (CA0-CA1ee)/V1
-b12 = (CA1ee-CA2ee)/V2
+b21 = (CA1ee-CA2ee)/V2
 
 // Sistema no lineal
 function dxdt = SNL(x)

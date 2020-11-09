@@ -49,7 +49,7 @@ a12 = -k0*CAee*exp(-E/(R*Tee))*E/(R*Tee^2)
 a21 = -H*k0*exp(-E/(R*Tee))/(RHO*CP)
 a22 = -F/V - UA/(V*RHO*CP) - H*k0*CAee/(RHO*CP)*exp(-E/(R*Tee))*E/(R*Tee^2) 
 b11 = 0
-b12 = UA/(V*RHO*CP)
+b21 = UA/(V*RHO*CP)
 
 // Sistema no lineal
 function dxdt = SNL(x)
