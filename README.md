@@ -7,8 +7,8 @@
 
 ## Bloque I. Simulación
 
-* Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1f5oBHUeEjwEuv7M8pTJEIiroGQr25Cw-?usp=sharing) 
-* Lista de reproducción en [YouTube](https://www.youtube.com/playlist?list=PLY7KaFBcCn-wRBAF-B86bEeSPU6pb234r)
+* Carpeta de archivos en [Google Drive](https://drive.google.com/drive/folders/1f5oBHUeEjwEuv7M8pTJEIiroGQr25Cw-) 
+* Lista de vídeos en [YouTube](https://www.youtube.com/playlist?list=PLY7KaFBcCn-wRBAF-B86bEeSPU6pb234r)
 
 
 ## Bloque II. Control
