@@ -24,11 +24,13 @@ scf(2); //clf(2);
 plot(t,y,'b-'); // Respuesta temporal
 xgrid; xtitle('Sistema de segundo orden sobreamortiguado - Respuesta a escalón', 't', 'y');
 
-// Punto de inflexión
-for i = 1:length(t)-2
-  d2y(i) = y(i+2)-2*y(i+1)+y(i); // Segundo diferencial
+// Derivada
+for i = 1:length(t)-1
+  dydt(i) = (y(i+1)-y(i))/dt;
 end
-indexI = find(d2y<0,1);
+
+// Punto de inflexión
+[dydtmax,indexI] = max(dydt);
 tI = t(indexI)
 tIt = log(T1/T2)/(1/T2-1/T1)  // Teórico
 plot(tI,y(t==tI),'bo');

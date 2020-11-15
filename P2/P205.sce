@@ -22,8 +22,7 @@ y = csim(u,t,G);  // Respuesta temporal
 
 scf(2); //clf(2); 
 plot(t,y,'b-'); // Respuesta temporal
-plot(T,y(t==T),'bo');  // Respuesta t=T
-plot(2*T,y(t==2*T),'bo');  // Respuesta t=2T
-plot(3*T,y(t==3*T),'bo');  // Respuesta t=3T
-plot(4*T,y(t==4*T),'bo');  // Respuesta t=4T
+for n = 1:4
+  plot(n*T,y(t==n*T),'bo');  // Respuesta t=n*T
+end
 xgrid; xtitle('Sistema de segundo orden críticamente amortiguado - Respuesta a escalón', 't', 'y');
