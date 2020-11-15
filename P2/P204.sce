@@ -29,7 +29,6 @@ for i = 1:length(t)-2
   d2y(i) = y(i+2)-2*y(i+1)+y(i); // Segundo diferencial
 end
 indexI = find(d2y<0,1);
-
 tI = t(indexI)
-tIt = log(T1/T2)/(1/T2-1/T1)
+tIt = log(T1/T2)/(1/T2-1/T1)  // Teórico
 plot(tI,y(t==tI),'bo');
