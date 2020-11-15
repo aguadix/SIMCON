@@ -9,10 +9,10 @@ dt = 0.01; tfin = 10; t = 0:dt:tfin; // Tiempo
 u = 'step';  // Entrada
 y = csim(u,t,G);  // Respuesta temporal
 
-scf(1); // clf(1); 
-plot(t,y,'b-'); // Respuesta temporal
+scf(1); clf(1); 
+plot(t,y); // Respuesta temporal
 for n = 1:4
-  plot(n*T,y(t==n*T),'bo');  // Respuesta t=n*T
+  plot(n*T,y(t==n*T),'ro');  // Respuesta t=n*T
 end
 xgrid; xtitle('Sistema de primer orden - Respuesta a escalón', 't', 'y');
 

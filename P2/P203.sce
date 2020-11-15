@@ -11,6 +11,6 @@ u = 'step';  // Entrada
 y = csim(u,t,G);  // Respuesta temporal
 
 scf(1); clf(1); 
-plot(t,y,'b-');  // Respuesta temporal
-plot(td+T,y(t==td+T),'bo');  // Respuesta t=td+T
+plot(t,y);  // Respuesta temporal
+plot(td+T,y(t==td+T),'ro');  // Respuesta t=td+T
 xgrid; xtitle('Sistema de primer orden con tiempo muerto - Respuesta a escalón', 't', 'y');

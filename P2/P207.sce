@@ -11,18 +11,18 @@ scf(1); clf(1);
 plzr(G); // Gráfico de polos y ceros
 xtitle('','','');
 a1 = gca; 
-a1.isoview = 'on';
-a1.data_bounds = [-2,-2;2,2];
 a1.x_location = 'origin'; 
 a1.y_location = 'origin'; 
+a1.data_bounds = [-2,-2;2,2];
+a1.isoview = 'on';
 a1.box = 'off';
 
 dt = 0.01; tfin = 20; t = 0:dt:tfin;  // Tiempo
 u = 'step';  // Entrada
 y = csim(u,t,G);  // Respuesta temporal
 
-scf(2); //clf(2); 
-plot(t,y,'b-'); // Respuesta temporal
+scf(2); clf(2); 
+plot(t,y); // Respuesta temporal
 xgrid; xtitle('Sistema de segundo orden con numerador dinámico - Respuesta a escalón', 't', 'y');
 
 // Máximo
