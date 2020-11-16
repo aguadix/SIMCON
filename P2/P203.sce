@@ -3,7 +3,7 @@ clear; clc;
 s = %s;
 
 K = 3; T = 2; td = 5; n = 1; // Sistema de primer orden con tiempo muerto
-exec pade.sci;  // Aproximación de Padé
+exec D:\SIMCON\P2\pade.sci; // Aproximación de Padé
 G = syslin('c',K*pade(td,n)/(T*s+1))  // Función de transferencia
 
 dt = 0.01; tfin = 20; t = 0:dt:tfin; // Tiempo 
