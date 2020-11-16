@@ -33,4 +33,5 @@ end
 [dydtmax,indexI] = max(dydt);
 tI = t(indexI)
 tIt = log(T1/T2)/(1/T2-1/T1)  // Teórico
-plot(tI,y(t==tI),'ro');
+yI = y(indexI)
+plot(tI,yI,'ro');
