@@ -1,5 +1,5 @@
 clear; clc;
-// P205.sce
+// P206.sce
 s = %s;
 
 K = 1; T = 1; z = 0.5; // Sistema de segundo orden subamortiguado
