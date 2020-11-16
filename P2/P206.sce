@@ -30,8 +30,7 @@ yee = y($)
 indexr = find(y>yee,1)
 tr = t(indexr)
 trt = (%pi-phi)/omega  // Teórico
-yr = y(indexr)
-plot(tr,yr,'ro');
+plot(tr,yee,'ro');
 
 // Tiempo de pico y sobrepaso
 [yp,indexp] = max(y)
