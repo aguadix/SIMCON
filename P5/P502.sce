@@ -40,7 +40,7 @@ Kc = 0.5;
 P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
-// Función de transferencia en lazo cerrado (regulador)
+// Regulador
 Gcl = syslin('c', Gd/(1+Gm*Gc*Gv*Gp))
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');

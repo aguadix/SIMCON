@@ -47,7 +47,7 @@ Kc = 5;
 P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
-// Función de transferencia en lazo cerrado (servomecanismo)
+// Servomecanismo
 Gcl = syslin('c',Gc*Gv*Gp / (1+Gm*Gc*Gv*Gp))
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
