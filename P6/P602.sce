@@ -1,5 +1,5 @@
 clear; clc; s = %s;
-// P602.sce
+// P602.sce 
 
 // DOMINIO DE LAPLACE
 
