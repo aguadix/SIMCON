@@ -60,7 +60,7 @@ end
 scf(1);
 plot(Kcu,Tiinterval,'r-');
 
-// Optimización con el algoritmo Nelder-Mead
+// Minimizar ISE con el algoritmo Nelder-Mead
 
 function stop = outfun(x,optimValues,state)
     scf(1); xnumb(x(1),x(2),optimValues.iteration);

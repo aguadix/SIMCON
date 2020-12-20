@@ -32,12 +32,12 @@ Pu = 2*%pi/omegau
 // Control PI
 // Kc = 0.45*Kcu; Ti = 0.83*Pu; 
 // P = Kc; I = Kc/Ti; D = 0; 
-// Grl = (1+1/(Ti*s))*Gp*Gv*Gm
+// Grl = syslin('c',(1+1/(Ti*s))*Gp*Gv*Gm)
 
 // Control PID
 // Kc = 0.60*Kcu; Ti = 0.50*Pu; Td = 0.13*Pu;
 // P = Kc; I = Kc/Ti; D = Kc*Td; 
-// Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
+// Grl = syslin('c',(1+1/(Ti*s)+Td*s)*Gp*Gv*Gm)
 
 // Tyreus-Luyben
 
@@ -49,12 +49,12 @@ Pu = 2*%pi/omegau
 // Control PI
 // Kc = 0.31*Kcu; Ti = 2.20*Pu; 
 // P = Kc; I = Kc/Ti; D = 0; 
-// Grl = (1+1/(Ti*s))*Gp*Gv*Gm
+// Grl = syslin('c',(1+1/(Ti*s))*Gp*Gv*Gm)
 
 // Control PID
  Kc = 0.45*Kcu; Ti = 2.20*Pu; Td = 0.16*Pu;
  P = Kc; I = Kc/Ti; D = Kc*Td; 
- Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
+ Grl = syslin('c',(1+1/(Ti*s)+Td*s)*Gp*Gv*Gm)
 
 // Lugar de las raíces
 inicio = roots(Grl.den)

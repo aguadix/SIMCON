@@ -75,4 +75,4 @@ show_margins(Gol);
 [MgdB,fcf] = g_margin(Gol)
 Mg = 10^(MgdB/20)
 [Mf,fcg] = p_margin(Gol)
-tdmax = Mf/(fcg*360)
+tdmax = Mf/(fcg*360)  
