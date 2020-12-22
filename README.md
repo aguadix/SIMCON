@@ -36,8 +36,8 @@ Fecha       | Hora  | Evento
 ~~Mar, 08-dic~~ | ~~19:00~~ | ~~Festivo~~
 ~~Lun, 14-dic~~ | ~~17:00~~ | ~~Disponible el material del Tema 5~~
 ~~Mar, 15-dic~~ | ~~19:00~~ | ~~Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)~~
-Lun, 21-dic | 17:00 | Disponible el material del Tema 6
-Mar, 22-dic | 19:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
+~~Lun, 21-dic~~ | ~~17:00~~ | ~~Disponible el material del Tema 6~~
+~~Mar, 22-dic~~ | ~~19:00~~ | ~~Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)~~
 Vie, 08-ene | 19:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Lun, 11-ene | 19:00 | Tutoría colectiva a través de [Google Meet](https://meet.google.com/rzw-gnwt-wmh)
 Mar, 12-ene | 17:00 | EXAMEN DE LOS TEMAS 4-6
