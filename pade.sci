@@ -4,4 +4,4 @@ function pade = pade(td,n)
         den(j) = ( factorial(2*n-j) * factorial(n) * ( td*s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
     end
     pade = (1+sum(num))/(1+sum(den))
-endfunction
+endfunction 

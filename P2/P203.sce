@@ -1,10 +1,10 @@
 clear; clc;
 // P203.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 3; T = 2; td = 5; n = 1; // Sistema de primer orden con tiempo muerto
-exec D:\SIMCON\pade.sci; // Aproximación de Padé
-G = syslin('c',K*pade(td,n)/(T*s+1))  // Función de transferencia
+exec C:\aguadix\GITHUB\SIMCON\pade.sci; // Aproximación de Padé
+G = K*pade(td,n)/(T*s+1)  // Función de transferencia
 
 dt = 0.01; tfin = 20; t = 0:dt:tfin; // Tiempo 
 u = 'step';  // Entrada

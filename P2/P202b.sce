@@ -1,9 +1,9 @@
 clear; clc;
 // P202b.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 1; T = 1;  // Sistema de primer orden
-G = syslin('c',K/(T*s+1))  // Función de transferencia
+G = K/(T*s+1)  // Función de transferencia
 
 dt = 0.01; tfin = 10; t = 0:dt:tfin; // Tiempo
 u = 'step';  // Entrada

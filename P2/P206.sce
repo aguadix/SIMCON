@@ -1,10 +1,10 @@
 clear; clc;
 // P206.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 1; T = 1; z = 0.5; // Sistema de segundo orden subamortiguado
 alpha = z/T; omega = sqrt(1-z^2)/T; phi = acos(z); 
-G = syslin('c',K/(T^2*s^2 + 2*z*T*s + 1))  // Función de transferencia
+G = K/(T^2*s^2 + 2*z*T*s + 1)  // Función de transferencia
 polos = roots(G.den)
 
 scf(1); clf(1); 

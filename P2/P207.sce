@@ -1,9 +1,9 @@
 clear; clc;
 // P205.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 1; Tn = 8; T1 = 4; T2 = 1; // Sistema de segundo orden subamortiguado
-G = syslin('c',K*(Tn*s+1)/((T1*s+1)*(T2*s+1)))
+G = K*(Tn*s+1)/((T1*s+1)*(T2*s+1))
 polos = roots(G.den)
 ceros = roots(G.num)
 

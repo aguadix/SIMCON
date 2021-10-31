@@ -1,9 +1,9 @@
 clear; clc;
 // P205.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 1; T = 1;  // Sistema de segundo orden críticamente amortiguado
-G = syslin('c',K/(T*s+1)^2)  // Función de transferencia
+G = K/(T*s+1)^2  // Función de transferencia
 polos = roots(G.den)
 
 scf(1); clf(1); 

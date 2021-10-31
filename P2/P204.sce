@@ -1,9 +1,9 @@
 clear; clc;
 // P204.sce
-s = %s;
+s = syslin('c',%s,1);
 
 K = 1; T1 = 5; T2 = 1; // Sistema de segundo orden sobreamortiguado
-G = syslin('c',K/((T1*s+1)*(T2*s+1))) // Función de transferencia
+G = K/((T1*s+1)*(T2*s+1)) // Función de transferencia
 polos = roots(G.den)
 
 scf(1); clf(1); 
@@ -24,13 +24,9 @@ scf(2); clf(2);
 plot(t,y); // Respuesta temporal
 xgrid; xtitle('Sistema de segundo orden sobreamortiguado - Respuesta a escalón', 't', 'y');
 
-// Derivada
-for i = 1:length(t)-1
-  dydt(i) = (y(i+1)-y(i))/dt;
-end
-
 // Punto de inflexión
-[dydtmax,indexI] = max(dydt);
+dydt = diff(y)/dt;
+[dydtmax,indexI] = max(dydt)
 tI = t(indexI)
 tIt = log(T1/T2)/(1/T2-1/T1)  // Teórico
 yI = y(indexI)
