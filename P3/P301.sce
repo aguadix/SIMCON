@@ -1,10 +1,10 @@
 clear; clc;
 // P301.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de primer orden
 K = 3; T = 2;
-G = syslin('c',K/(T*s+1))
+G = K/(T*s+1)
 
 f = 0.080; // Frecuencia
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo

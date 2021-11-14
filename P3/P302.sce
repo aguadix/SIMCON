@@ -1,11 +1,11 @@
 clear; clc;
 // P302.sce
-s = %s; 
+s = syslin('c',%s,1);
 exec D:\SIMCON\pade.sci;
 
 // Sistema de primer orden con tiempo muerto
 K = 3; T = 2; td = 10; n = 10; 
-G = syslin('c',K*pade(td,n)/(T*s+1)) 
+G = K*pade(td,n)/(T*s+1) 
 
 f = 0.087; // Frecuencia
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo

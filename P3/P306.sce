@@ -1,10 +1,10 @@
 clear; clc;
 // P306.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de segundo orden sobreamortiguado con numerado
 K = 1; T1 = 4; T2 = 1; Tn = 8; 
-G = syslin('c',K*(Tn*s+1)/((T1*s+1)*(T2*s+1))) 
+G = K*(Tn*s+1)/((T1*s+1)*(T2*s+1)) 
 
 fmin = 1E-3; fmax = 1E1; f = logspace(log10(fmin),log10(fmax),1E4); // Frecuencia
 repf = repfreq(G,f); // Respuesta compleja

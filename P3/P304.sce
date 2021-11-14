@@ -1,10 +1,10 @@
 clear; clc;
 // P304.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de segundo orden críticamente amortiguado
 K = 1; T = 2; 
-G = syslin('c',K/(T*s+1)^2)  
+G = K/(T*s+1)^2  
 
 fmin = 1E-3; fmax = 1E1; f = logspace(log10(fmin),log10(fmax),1E4); // Frecuencia  
 repf = repfreq(G,f); // Respuesta compleja

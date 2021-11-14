@@ -1,10 +1,10 @@
 clear; clc;
 // P303.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de segundo orden sobreamortiguado
 K = 2; T1 = 5; T2 = 2; 
-G = syslin('c',K/((T1*s+1)*(T2*s+1)))  
+G = K/((T1*s+1)*(T2*s+1))  
 
 f = 0.051; // Frecuencia
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo

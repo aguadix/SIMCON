@@ -1,10 +1,10 @@
 clear; clc;
 // P305.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de segundo orden subamortiguado
 K = 1; T = 2; z = 0.4; 
-G = syslin('c',K/(T^2*s^2+2*z*T*s+1)) 
+G = K/(T^2*s^2+2*z*T*s+1) 
 
 fmin = 1E-3; fmax = 1E1; f = logspace(log10(fmin),log10(fmax),1E4); // Frecuencia
 repf = repfreq(G,f); // Respuesta compleja
