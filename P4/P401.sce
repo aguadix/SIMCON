@@ -1,5 +1,6 @@
-clear; clc; s = %s;
+clear; clc;
 // P401.sce
+s = syslin('c',%s,1);
 
 // Proceso de segundo orden sobreamortiguado
 Kp = 1; Tp1 = 10; Tp2 = 5; Gp = Kp/((Tp1*s+1)*(Tp2*s+1)) 
@@ -42,16 +43,15 @@ plot(t,e);
 xgrid; xtitle('Error', 't', 'e');
 
 // Integral del error
-for i = 1:length(t)
-    intedt(i) = inttrap(t(1:i),e(1:i));
+intedt(1) = 0;
+for i = 2:length(t)
+    intedt(i) = intedt(i-1) + dt*(e(i-1)+e(i))/2; 
 end
 
 // Derivada del error
-for i = 1:length(t)-1
-    dedt(i) = (e(i+1)-e(i))/dt;
-end
+dedt = diff(e)/dt;
 
 scf(3); clf(3); 
-subplot(3,1,1); plot(t,P*e); xgrid; xtitle('Acciones de control','','Proporcional');
-subplot(3,1,2); plot(t,I*intedt); xgrid; xtitle('','','Integral'); 
-subplot(3,1,3); plot(t(1:$-1),D*dedt); xgrid; xtitle('','t','Derivativa');
+subplot(3,1,1); plot(t,P*e); xgrid; xtitle('Acciones de control','','P*e');
+subplot(3,1,2); plot(t,I*intedt); xgrid; xtitle('','','I*intedt'); 
+subplot(3,1,3); plot(t(1:$-1),D*dedt); xgrid; xtitle('','t','D*dedt');
