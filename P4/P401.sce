@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P401.sce
 s = syslin('c',%s,1);
 
@@ -18,7 +18,7 @@ Kc = 12; Ti = 16; Td = 2.3; P = Kc; I = Kc/Ti; D = Kc*Td; // PID
 Gc = P + I/s + D*s 
 
 // Función de transferencia en lazo cerrado (servomecanismo)
-Gcl = syslin('c',Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp))
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)
 
 // Respuesta temporal a escalón
 dt = 0.01; tfin = 120; t = 0:dt:tfin;
