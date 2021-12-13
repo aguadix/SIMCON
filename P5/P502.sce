@@ -1,5 +1,6 @@
-clear; clc; s = %s;
+clear; clc;
 // P502.sce
+s = syslin('c',%s,1);
 
 // Proceso de segundo orden sobreamortiguado
 Kp = 1; Kd = 2; Tp1 = 5; Tp2 = 1; 
@@ -13,7 +14,7 @@ Kv = 1; Gv = Kv
 Gm = 1 
 
 // Lugar de las raíces
-Grl = syslin('c',Gv*Gp*Gm)
+Grl = Gv*Gp*Gm
 inicio = roots(Grl.den)
 fin = roots(Grl.num)
 
@@ -41,7 +42,7 @@ P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Regulador
-Gcl = syslin('c', Gd/(1+Gm*Gc*Gv*Gp))
+Gcl = Gd/(1+Gm*Gc*Gv*Gp)
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
 [omegancl,zcl] = damp(Gcl)

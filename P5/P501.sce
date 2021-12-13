@@ -1,5 +1,6 @@
-clear; clc; s = %s;
+clear; clc;
 // P501.sce
+s = syslin('c',%s,1);
 
 // Proceso de primer orden
 Kp = 2; Tp = 5; 
@@ -12,7 +13,7 @@ Kv = 1; Gv = Kv
 Gm = 1 
 
 // Lugar de las raíces
-Grl = syslin('c',Gv*Gp*Gm)
+Grl = Gv*Gp*Gm
 inicio = roots(Grl.den)
 fin = roots(Grl.num)
 
@@ -35,7 +36,7 @@ P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo
-Gcl = syslin('c',Gc*Gv*Gp / (1+Gm*Gc*Gv*Gp))  // Servomecanismo
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)  // Servomecanismo
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
 

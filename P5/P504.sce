@@ -1,11 +1,12 @@
-clear; clc; s = %s; 
+clear; clc;
 // P504.sce
+s = syslin('c',%s,1);
 
 // Proceso de segundo orden sobreamortiguado
 Kp = 1; Tp1 = 5; Tp2 = 1; 
 Gp = Kp/((Tp1*s+1)*(Tp2*s+1))
 // Gp = Gp*3.96  // Comprueba margen de ganancia
-exec D:\SIMCON\pade.sci;
+// exec D:\SIMCON\pade.sci;
 //Gp = Gp*pade(1.17,5) // Comprueba margen de fase
 
 // Válvula de primer orden
@@ -15,7 +16,7 @@ Kv = 1; Tv = 0.5; Gv = Kv/(Tv*s+1)
 Gm = 1 
 
 // Lugar de las raíces
-Grl = syslin('c',Gv*Gp*Gm)
+Grl = Gv*Gp*Gm
 inicio = roots(Grl.den)
 fin = roots(Grl.num)
 
@@ -48,7 +49,7 @@ P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo
-Gcl = syslin('c',Gc*Gv*Gp / (1+Gm*Gc*Gv*Gp))
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
 [omegancl,zcl] = damp(Gcl)
@@ -66,7 +67,7 @@ plot(t,y);
 xgrid; xtitle('Respuesta temporal a escalón', 't', 'y');
 
 // Márgenes de ganancia y fase
-Gol = syslin('c',Gc*Gv*Gp*Gm)
+Gol = Gc*Gv*Gp*Gm
 scf(3); clf(3);
 show_margins(Gol);
 [MgdB,fcf] = g_margin(Gol)
