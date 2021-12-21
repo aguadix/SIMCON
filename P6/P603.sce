@@ -1,5 +1,6 @@
-clear; clc; s = %s;
-// P603.sci 
+clear; clc;
+// P603.sci
+s = syslin('c',%s,1); 
 
 // Proceso de segundo orden críticamente amortiguado (variable manipulada)
 Kp = 1, Tp = 10; Gp = Kp/(Tp*s+1)^2
@@ -23,7 +24,7 @@ function y = f(x)
     P = Kc; I = Kc/Ti; D = 0;
     Gc = P + I/s + D*s;
     // Regulador
-    Gcl = syslin('c',Gd/(1+Gm*Gc*Gv*Gp));
+    Gcl = Gd/(1+Gm*Gc*Gv*Gp);
     // Respuesta temporal a escalón
     y = csim(u,t,Gcl);
 endfunction

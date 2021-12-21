@@ -1,10 +1,11 @@
-clear; clc; s = %s;
-// P602.sce 
+clear; clc;
+// P602.sce
+s = syslin('c',%s,1); 
 
 // DOMINIO DE LAPLACE
 
 // Proceso de primer orden con tiempo muerto
-Kp = 2 ; Tp = 5 ; td = 1; n = 2;  
+Kp = 2 ; Tp = 5 ; td = 1; n = 5;  
 exec D:\SIMCON\pade.sci;
 Gp = Kp*pade(td,n)/(Tp*s+1) 
 
@@ -49,7 +50,7 @@ Gm = 1;
 Gc = P + I/s + D*s
 
 // Servomecanismo
-Gcl = syslin('c',Gc*Gv*Gp / (1+Gm*Gc*Gv*Gp))
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)
 
 // DOMINIO DEL TIEMPO
 
@@ -69,7 +70,7 @@ xgrid; xtitle('Respuesta temporal a escalón', 't', 'y');
 // DOMINIO DE LA FRECUENCIA
 
 // Márgenes de ganancia y fase
-Gol = syslin('c',Gc*Gv*Gp*Gm)
+Gol = Gc*Gv*Gp*Gm
 scf(2); clf(2);
 show_margins(Gol);
 [MgdB,fcf] = g_margin(Gol)

@@ -1,5 +1,6 @@
-clear; clc; s = %s;
-// P601.sce 
+clear; clc;
+// P601.sce
+s = syslin('c',%s,1); 
 
 // DOMINIO DE LAPLACE
 
@@ -15,7 +16,7 @@ Gv = Kv/(Tv*s+1)
 Gm = 1; 
 
 // Ganancia y periodo últimos suponiendo control P
-Grl = syslin('c',Gp*Gv*Gm) 
+Grl = Gp*Gv*Gm 
 [Kcu,omegaui] = kpure(Grl)
 omegau = abs(omegaui)
 Pu = 2*%pi/omegau
@@ -27,34 +28,34 @@ Pu = 2*%pi/omegau
 // Control P
 // Kc = 0.50*Kcu; 
 // P = Kc; I = 0; D = 0; 
-// Grl = syslin('c',Gp*Gv*Gm) 
+// Grl = Gp*Gv*Gm 
 
 // Control PI
 // Kc = 0.45*Kcu; Ti = 0.83*Pu; 
 // P = Kc; I = Kc/Ti; D = 0; 
-// Grl = syslin('c',(1+1/(Ti*s))*Gp*Gv*Gm)
+// Grl = (1+1/(Ti*s))*Gp*Gv*Gm
 
 // Control PID
 // Kc = 0.60*Kcu; Ti = 0.50*Pu; Td = 0.13*Pu;
 // P = Kc; I = Kc/Ti; D = Kc*Td; 
-// Grl = syslin('c',(1+1/(Ti*s)+Td*s)*Gp*Gv*Gm)
+// Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
 
 // Tyreus-Luyben
 
 // Control P
 // Kc = 0.50*Kcu; 
 // P = Kc; I = 0; D = 0; 
-// Grl = syslin('c',Gp*Gv*Gm) 
+// Grl = Gp*Gv*Gm 
 
 // Control PI
 // Kc = 0.31*Kcu; Ti = 2.20*Pu; 
 // P = Kc; I = Kc/Ti; D = 0; 
-// Grl = syslin('c',(1+1/(Ti*s))*Gp*Gv*Gm)
+// Grl = (1+1/(Ti*s))*Gp*Gv*Gm
 
 // Control PID
  Kc = 0.45*Kcu; Ti = 2.20*Pu; Td = 0.16*Pu;
  P = Kc; I = Kc/Ti; D = Kc*Td; 
- Grl = syslin('c',(1+1/(Ti*s)+Td*s)*Gp*Gv*Gm)
+ Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
 
 // Lugar de las raíces
 inicio = roots(Grl.den)
@@ -72,17 +73,17 @@ a1.box = 'off';
 a1.children.children(1).foreground = 2;
 a1.children.children(2).foreground = 13;
 a1.children.children(3).foreground = 5;
-a1.children.children(4).foreground = 7;
+//a1.children.children(4).foreground = 7;
 a1.children.children(1).thickness = 3;
 a1.children.children(2).thickness = 3;
 a1.children.children(3).thickness = 3;
-a1.children.children(4).thickness = 3;
+//a1.children.children(4).thickness = 3;
 
 // Controlador
 Gc = P + I/s + D*s  
 
 // Servomecanismo
-Gcl = syslin('c',Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)) 
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp) 
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
 [omegancl,zcl] = damp(Gcl)
@@ -106,7 +107,7 @@ xgrid; xtitle('Respuesta temporal a escalón', 't', 'y');
 // DOMINIO DE LA FRECUENCIA
 
 // Márgenes de ganancia y fase
-Gol = syslin('c',Gc*Gv*Gp*Gm)
+Gol = Gc*Gv*Gp*Gm
 scf(3); clf(3);
 show_margins(Gol);
 [MgdB,fcf] = g_margin(Gol)
