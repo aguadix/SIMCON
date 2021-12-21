@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P601.sce
 s = syslin('c',%s,1); 
 
@@ -26,9 +26,9 @@ Pu = 2*%pi/omegau
 // Ziegler-Nichols
 
 // Control P
-// Kc = 0.50*Kcu; 
-// P = Kc; I = 0; D = 0; 
-// Grl = Gp*Gv*Gm 
+ Kc = 0.50*Kcu; 
+ P = Kc; I = 0; D = 0; 
+ Grl = Gp*Gv*Gm 
 
 // Control PI
 // Kc = 0.45*Kcu; Ti = 0.83*Pu; 
@@ -53,9 +53,9 @@ Pu = 2*%pi/omegau
 // Grl = (1+1/(Ti*s))*Gp*Gv*Gm
 
 // Control PID
- Kc = 0.45*Kcu; Ti = 2.20*Pu; Td = 0.16*Pu;
- P = Kc; I = Kc/Ti; D = Kc*Td; 
- Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
+// Kc = 0.45*Kcu; Ti = 2.20*Pu; Td = 0.16*Pu;
+// P = Kc; I = Kc/Ti; D = Kc*Td; 
+// Grl = (1+1/(Ti*s)+Td*s)*Gp*Gv*Gm
 
 // Lugar de las raíces
 inicio = roots(Grl.den)

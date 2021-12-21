@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P602.sce
 s = syslin('c',%s,1); 
 
@@ -21,8 +21,8 @@ Gm = 1;
 // Ziegler-Nichols
 
 // Control P
-// Kc = Tp/(Kp*td); 
-// P = Kc; I = 0; D = 0;
+ Kc = Tp/(Kp*td); 
+ P = Kc; I = 0; D = 0;
 
 // Control PI
 // Kc = 0.9*Tp/(Kp*td); Ti = 3.3*td; 
@@ -43,8 +43,8 @@ Gm = 1;
 // P = Kc; I = Kc/Ti; D = 0;
 
 // Control PID
- Kc = Tp/(Kp*td)*(1.33+td/(4*Tp)); Ti = td*(32+6*td/Tp)/(13+8*td/Tp); Td = 4*td/(11+2*td/Tp); 
- P = Kc; I = Kc/Ti; D = Kc*Td;
+// Kc = Tp/(Kp*td)*(1.33+td/(4*Tp)); Ti = td*(32+6*td/Tp)/(13+8*td/Tp); Td = 4*td/(11+2*td/Tp); 
+// P = Kc; I = Kc/Ti; D = Kc*Td;
 
 // Controlador
 Gc = P + I/s + D*s
