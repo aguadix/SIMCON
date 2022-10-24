@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P202b.sce
 s = syslin('c',%s,1);
 

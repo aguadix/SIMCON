@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P302.sce
 s = syslin('c',%s,1);
 exec D:\SIMCON\pade.sci;

@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;  
 // P603.sci
 s = syslin('c',%s,1); 
 
