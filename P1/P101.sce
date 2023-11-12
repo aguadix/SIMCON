@@ -35,14 +35,9 @@ B = 1/At
 
 // Sistema no lineal
 function dxdt = SNL(x)
-    // Variables de estado
-    h = x(1)
-    // Variables de entrada
-    F2 = x(2)
-    // Balance de materia en el reactor 1
-    dhdt = (F1 + F2 - k*sqrt(h))/At
-    // Derivadas
-    dxdt = dhdt
+    h = x(1)   // Variable de estado
+    F2 = x(2)  // Variable de entrada
+    dxdt = f(x)
 endfunction
 
 // Matriz jacobiana
