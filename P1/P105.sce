@@ -46,18 +46,10 @@ b21 = -CBee/V
 
 // Sistema no lineal
 function dxdt = SNL(x)
-    // Variables de estado
-    CA = x(1)
-    CB = x(2)
-    // Variables de entrada
-    F  = x(3)
-    // Balance de materia para A
-    dCAdt = F*(CA0-CA)/V - k1*CA - k3*CA^2
-    // Balance de materia para B
-    dCBdt = - F*CB/V + k1*CA - k2*CB
-    // Derivadas
-    dxdt(1) = dCAdt
-    dxdt(2) = dCBdt
+    CA = x(1)  // Variable de estado
+    CB = x(2)  // Variable de estado
+    F  = x(3)  // Variable de entrada
+    dxdt = f(x)
 endfunction
 
 // Matriz jacobiana
