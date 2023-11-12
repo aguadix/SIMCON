@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P202b.sce
 s = syslin('c',%s,1);
 
@@ -15,4 +15,3 @@ for n = 1:4
   plot(n*T,y(t==n*T),'ro');  // Respuesta t=n*T
 end
 xgrid; xtitle('Sistema de primer orden - Respuesta a escalón', 't', 'y');
-
