@@ -22,7 +22,7 @@ y = csim(u,t,G);  // Respuesta tempora
 
 scf(2); clf(2); 
 plot(t,y); // Respuesta temporal
-xgrid; xtitle('Sistema de segundo orden sobreamortiguado - Respuesta a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
 
 // Punto de inflexión
 dydt = diff(y)/dt;
