@@ -1,5 +1,5 @@
 clear; clc;
-// P205.sce
+// P207.sce
 s = syslin('c',%s,1);
 
 K = 1; Tn = 8; T1 = 4; T2 = 1; // Sistema de segundo orden subamortiguado
