@@ -1,6 +1,4 @@
-clear; clc; 
 // P201.sce
-exec C:\aguadix\GITHUB\SIMCON\P1\P101.sce;
 s = %s;
 
 // Sistema de primer orden
