@@ -8,10 +8,12 @@ function dxdt = f(x)
     // Variables
     CA = x(1)
     T  = x(2)
+    // Ecuación de Arrhenius
+    k = k0*exp(-E/(R*T))
     // Balance de materia para A
-    dCAdt = F*(CA0-CA)/V - k0*exp(-E/(R*T))*CA
+    dCAdt = F*(CA0-CA)/V - k*CA
     // Balance de energía
-    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k0*exp(-E/(R*T))*CA/(RHO*CP)
+    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k*CA/(RHO*CP)
     // Derivadas
     dxdt(1) = dCAdt
     dxdt(2) = dTdt
@@ -53,20 +55,10 @@ b21 = UA/(V*RHO*CP)
 
 // Sistema no lineal
 function dxdt = SNL(x)
-    // Variables de estado
-    CA = x(1)
-    T  = x(2)
-    // Variables de entrada
-    TJ = x(3)
-    // Ecuación de Arrhenius
-    k = k0*exp(-E/(R*T))
-    // Balance de materia para A
-    dCAdt = F*(CA0-CA)/V - k*CA
-    // Balance de energía
-    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k*CA/(RHO*CP)
-    // Derivadas
-    dxdt(1) = dCAdt
-    dxdt(2) = dTdt
+    CA = x(1)  // Variable de estado
+    T  = x(2)  // Variable de estado  
+    TJ = x(3)  // Variable de entrada
+    dxdt = f(x)
 endfunction
 
 // Matriz jacobiana
