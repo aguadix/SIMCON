@@ -23,7 +23,7 @@ y = csim(u,t,G); // Respuesta temporal
 
 scf(2); clf(2); 
 plot(t,y);  // Respuesta temporal
-xgrid; xtitle('Sistema de segundo orden subamortiguado - Respuesta a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
 
 // Tiempo de alzada (100%)
 yee = y($)
