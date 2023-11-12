@@ -25,4 +25,4 @@ plot(t,y); // Respuesta temporal
 for n = 1:4
   plot(n*T,y(t==n*T),'ro');  // Respuesta t=n*T
 end
-xgrid; xtitle('Sistema de segundo orden críticamente amortiguado - Respuesta a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
