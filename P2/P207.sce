@@ -23,7 +23,7 @@ y = csim(u,t,G);  // Respuesta temporal
 
 scf(2); clf(2); 
 plot(t,y); // Respuesta temporal
-xgrid; xtitle('Sistema de segundo orden con numerador dinámico - Respuesta a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
 
 // Máximo
 [yp,indexp] = max(y)
