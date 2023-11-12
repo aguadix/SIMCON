@@ -50,7 +50,7 @@ kee = k0*exp(-E/(R*Tee))
 a11 = -F/V - kee
 a12 = -kee*CAee*E/(R*Tee^2)
 a21 = -H*kee/(RHO*CP)
-a22 = -F/V - UA/(V*RHO*CP) - H*kee*CAee/(RHO*CP)*E/(R*Tee^2) 
+a22 = -F/V - UA/(V*RHO*CP) - H*kee*CAee*E/(RHO*CP*R*Tee^2) 
 b11 = 0
 b21 = UA/(V*RHO*CP)
 
