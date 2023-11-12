@@ -22,4 +22,4 @@ y = csim(u,t,G);  // Respuesta temporal
 
 scf(2); clf(2); 
 plot(t,y); // Respuesta temporal
-xgrid; xtitle('Sistema de primer orden - Respuesta a impulso', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
