@@ -35,14 +35,9 @@ B = F/V
 
 // Sistema no lineal
 function dxdt = SNL(x)
-    // Variables de estado
-    CA = x(1)
-    // Variables de entrada
-    CA0 = x(2)
-    // Balance de materia
-    dCAdt = F*(CA0-CA)/V - k*CA
-    // Derivadas
-    dxdt = dCAdt
+    CA = x(1)  // Variable de estado
+    CA0 = x(2) // Variable de entrada
+    dxdt = f(x)
 endfunction
 
 // Matriz jacobiana
