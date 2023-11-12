@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P202c.sce
 s = syslin('c',%s,1);
 
@@ -13,5 +13,3 @@ scf(1); clf(1);
 plot(t,K*(t-T),'g-'); // Asíntota oblicua
 plot(t,y); // Respuesta temporal
 xgrid; xtitle('Sistema de primer orden - Respuesta a rampa', 't', 'y');
-
-
