@@ -12,4 +12,4 @@ y = csim(u,t,G);  // Respuesta temporal
 scf(1); clf(1); 
 plot(t,K*(t-T),'g-'); // Asíntota oblicua
 plot(t,y); // Respuesta temporal
-xgrid; xtitle('Sistema de primer orden - Respuesta a rampa', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
