@@ -1,5 +1,5 @@
 // P201.sce
-s = %s;
+s = syslin('c',%s,1);
 
 // Sistema de primer orden
 // G = B/(s-A)

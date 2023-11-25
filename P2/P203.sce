@@ -6,8 +6,8 @@ K = 3; T = 2; td = 5; n = 1; // Sistema de primer orden con tiempo muerto
 
 function pade = pade(td,n) 
     for j=1:n 
-        num(j) = ( factorial(2*n-j) * factorial(n) * (-td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
-        den(j) = ( factorial(2*n-j) * factorial(n) * ( td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+        num(j) = ( factorial(2*n-j) * factorial(n) * (-td*s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+        den(j) = ( factorial(2*n-j) * factorial(n) * ( td*s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
     end
     pade = (1+sum(num))/(1+sum(den))
 endfunction 
@@ -21,4 +21,4 @@ y = csim(u,t,G);  // Respuesta temporal
 scf(1); clf(1); 
 plot(t,y);  // Respuesta temporal
 plot(td+T,y(t==td+T),'ro');  // Respuesta t=td+T
-xgrid; xtitle('Sistema de primer orden con tiempo muerto - Respuesta a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
