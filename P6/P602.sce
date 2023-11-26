@@ -6,7 +6,15 @@ s = syslin('c',%s,1);
 
 // Proceso de primer orden con tiempo muerto
 Kp = 2 ; Tp = 5 ; td = 1; n = 5;  
-exec D:\SIMCON\pade.sci;
+
+function pade = pade(td,n) 
+    for j=1:n 
+        num(j) = ( factorial(2*n-j) * factorial(n) * (-td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+        den(j) = ( factorial(2*n-j) * factorial(n) * ( td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+    end
+    pade = (1+sum(num))/(1+sum(den))
+endfunction 
+
 Gp = Kp*pade(td,n)/(Tp*s+1) 
 
 // Válvula ideal
