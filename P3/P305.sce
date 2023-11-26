@@ -24,14 +24,12 @@ y = csim(u,t,G);  // Respuesta temporal
 
 scf(1); clf(1); 
 plot(t,u,t,y);
-xgrid; xtitle('Sistema de segundo orden subamortiguado - Respuesta temporal a frecuencia','t','u(azul), y(verde)');
+xgrid; xlabel('t'); legend('u','y',-2,%f);
 
 scf(2); clf(2);
 bode(G,fmin,fmax);
-xtitle('Sistema de segundo orden subamortiguado - Diagrama de Bode');
 
 scf(3); clf(3);
-xtitle('Sistema de segundo orden subamortiguado - Diagrama de Bode');
 subplot(2,1,1); gainplot(G,fmin,fmax); plot(fr,dBr,'ro');
 subplot(2,1,2); phaseplot(G,fmin,fmax); plot(fr,phir,'ro')
 

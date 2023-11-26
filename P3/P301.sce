@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P301.sce
 s = syslin('c',%s,1);
 
@@ -13,26 +13,23 @@ y = csim(u,t,G); // Respuesta temporal
 repf = repfreq(G,f) // Respuesta compleja
 [dB,phi] = dbphi(repf) // Magnitud y fase
 
-
 scf(1); clf(1);
 plot(t,u,t,y);
-xgrid; xtitle('Sistema de primer orden','t','u(azul), y(verde)');
+xgrid; xlabel('t'); legend('u','y',-2,%f);
 
 fmin = 0.001; fmax = 10;
 
 scf(2); clf(2);
 bode(G,fmin,fmax);
-xtitle('Sistema de primer orden - Diagrama de Bode');
 
 scf(3); clf(3);
-xtitle('Sistema de primer orden - Diagrama de Bode')
 subplot(2,1,1); gainplot(G,fmin,fmax); plot(f,dB,'ro');
 subplot(2,1,2); phaseplot(G,fmin,fmax); plot(f,phi,'ro');
 
 scf(4); clf(4);
 nyquist(G,fmin,fmax,%f);
 plot(real(repf),imag(repf),'ro');
-xtitle('Sistema de primer orden','','');
+xtitle('','','');
 a4 = gca;
 a4.x_location = 'origin';
 a4.y_location = 'origin';

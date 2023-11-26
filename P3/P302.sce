@@ -1,11 +1,19 @@
 clear; clc; 
 // P302.sce
 s = syslin('c',%s,1);
-exec D:\SIMCON\pade.sci;
 
 // Sistema de primer orden con tiempo muerto
 K = 3; T = 2; td = 10; n = 10; 
-G = K*pade(td,n)/(T*s+1) 
+
+function pade = pade(td,n) 
+    for j=1:n 
+        num(j) = ( factorial(2*n-j) * factorial(n) * (-td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+        den(j) = ( factorial(2*n-j) * factorial(n) * ( td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
+    end
+    pade = (1+sum(num))/(1+sum(den))
+endfunction 
+
+G = K*pade(td,n)/(T*s+1)
 
 f = 0.087; // Frecuencia
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo
@@ -16,23 +24,21 @@ repf = repfreq(G,f) // Respuesta compleja
 
 scf(1); clf(1); 
 plot(t,u,t,y);
-xgrid; xtitle('Sistema de primer orden con tiempo muerto - Respuesta temporal a frecuencia','t','u(azul), y(verde)');
+xgrid; xlabel('t'); legend('u','y',-2,%f);
 
 fmin = 0.001; fmax = 10;
 
 scf(2); clf(2);
 bode(G,fmin,fmax);
-xtitle('Sistema de primer orden con tiempo muerto - Diagrama de Bode');
 
 scf(3); clf(3);
-xtitle('Sistema de primer orden con tiempo muerto - Diagrama de Bode');
 subplot(2,1,1); gainplot(G,fmin,fmax); plot(f,dB,'ro');
 subplot(2,1,2); phaseplot(G,fmin,fmax); plot(f,phi-360,'ro')
 
 scf(4); clf(4);
 nyquist(G,fmin,fmax,%f)
 plot(real(repf),imag(repf),'ro');
-xtitle('Sistema de primer orden con tiempo muerto - Diagrama de Nyquist','','');
+xtitle('','','');
 a4 = gca; 
 a4.x_location = 'origin'; 
 a4.y_location = 'origin'; 
