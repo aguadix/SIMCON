@@ -59,7 +59,15 @@ function dxdt = SNL(x)
     CA = x(1)  // Variable de estado
     T  = x(2)  // Variable de estado  
     TJ = x(3)  // Variable de entrada
-    dxdt = f(x)
+    // Ecuación de Arrhenius
+    k = k0*exp(-E/(R*T))
+    // Balance de materia para A
+    dCAdt = F*(CA0-CA)/V - k*CA
+    // Balance de energía
+    dTdt = F *(T0-T)/V + UA*(TJ-T)/(V*RHO*CP) - H*k*CA/(RHO*CP)
+    // Derivadas
+    dxdt(1) = dCAdt
+    dxdt(2) = dTdt
 endfunction
 
 // Matriz jacobiana

@@ -37,7 +37,10 @@ B = 1/At
 function dxdt = SNL(x)
     h = x(1)   // Variable de estado
     F2 = x(2)  // Variable de entrada
-    dxdt = f(x)
+    // Balance de materia
+    dhdt = (F1 + F2 - k*sqrt(h))/At
+    // Derivadas
+    dxdt = dhdt
 endfunction
 
 // Matriz jacobiana

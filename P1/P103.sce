@@ -37,7 +37,10 @@ B = F/V
 function dxdt = SNL(x)
     CA = x(1)  // Variable de estado
     CA0 = x(2) // Variable de entrada
-    dxdt = f(x)
+    // Balance de materia
+    dCAdt = F*(CA0-CA)/V - k*CA
+    // Derivadas
+    dxdt = dCAdt
 endfunction
 
 // Matriz jacobiana

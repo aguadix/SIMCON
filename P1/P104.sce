@@ -48,7 +48,13 @@ function dxdt = SNL(x)
     CA1 = x(1)  // Variable de estado
     CA2 = x(2)  // Variable de estado
     F   = x(3)  // Variable de entrada
-    dxdt = f(x)    
+    // Balance de materia en el reactor 1
+    dCA1dt = F*(CA0-CA1)/V1 - k*CA1
+    // Balance de materia en el reactor 2
+    dCA2dt = F*(CA1-CA2)/V2 - k*CA2
+    // Derivadas
+    dxdt(1) = dCA1dt
+    dxdt(2) = dCA2dt
 endfunction
 
 // Matriz jacobiana

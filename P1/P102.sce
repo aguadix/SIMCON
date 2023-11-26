@@ -40,7 +40,10 @@ B = F/V
 function dxdt = SNL(x)
     T = x(1)  // Variable de estado
     T0 = x(2) // Variable de entrada
-    dxdt = f(x)
+    // Balance de energía
+    dTdt = F*(T0-T)/V + UA*(TJ-T)/(V*RHO*CP)
+    // Derivadas
+    dxdt = dTdt
 endfunction
 
 // Matriz jacobiana
