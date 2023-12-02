@@ -1,4 +1,4 @@
-clear; clc;  
+clear; clc;
 // P401.sce
 s = syslin('c',%s,1);
 
@@ -27,7 +27,7 @@ y = csim(u,t,Gcl);
 
 scf(1); clf(1); 
 plot(t,y); 
-xgrid; xtitle('Respuesta temporal a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');
 
 // Tiempo de pico
 [yp,indexp] = max(y)
@@ -40,18 +40,17 @@ offset = e($)
 
 scf(2); clf(2); 
 plot(t,e); 
-xgrid; xtitle('Error', 't', 'e');
+xgrid; xlabel('t'); ylabel('e');
 
 // Integral del error
-intedt(1) = 0;
-for i = 2:length(t)
-    intedt(i) = intedt(i-1) + dt*(e(i-1)+e(i))/2; 
-end
+edt(1) = 0;
+edt(2:length(t)) = (e(1:$-1)+e(2:$))/2*dt;
+intedt = cumsum(edt);
 
 // Derivada del error
 dedt = diff(e)/dt;
 
 scf(3); clf(3); 
-subplot(3,1,1); plot(t,P*e); xgrid; xtitle('Acciones de control','','P*e');
-subplot(3,1,2); plot(t,I*intedt); xgrid; xtitle('','','I*intedt'); 
-subplot(3,1,3); plot(t(1:$-1),D*dedt); xgrid; xtitle('','t','D*dedt');
+subplot(3,1,1); plot(t,P*e); xgrid; ylabel('P*e');
+subplot(3,1,2); plot(t,I*intedt); xgrid; ylabel('I*intedt');
+subplot(3,1,3); plot(t(1:$-1),D*dedt); xgrid; xlabel('t'); ylabel('D*dedt');
