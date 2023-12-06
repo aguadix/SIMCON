@@ -2,9 +2,6 @@ clear; clc;
 // P302.sce
 s = syslin('c',%s,1);
 
-// Sistema de primer orden con tiempo muerto
-K = 3; T = 2; td = 10; n = 10; 
-
 function pade = pade(td,n) 
     for j=1:n 
         num(j) = ( factorial(2*n-j) * factorial(n) * (-td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
@@ -13,14 +10,17 @@ function pade = pade(td,n)
     pade = (1+sum(num))/(1+sum(den))
 endfunction 
 
+// Sistema de primer orden con tiempo muerto
+K = 3; T = 2; td = 10; n = 10; 
 G = K*pade(td,n)/(T*s+1)
 
 f = 0.087; // Frecuencia
+repf = repfreq(G,f) // Respuesta compleja
+[dB,phi] = dbphi(repf) // Magnitud y fase
+
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo
 M = 1; omega = 2*%pi*f; u = M*sin(omega*t);  // Entrada
 y = csim(u,t,G);  // Respuesta temporal
-repf = repfreq(G,f) // Respuesta compleja
-[dB,phi] = dbphi(repf) // Magnitud y fase
 
 scf(1); clf(1); 
 plot(t,u,t,y);

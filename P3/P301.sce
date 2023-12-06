@@ -7,11 +7,12 @@ K = 3; T = 2;
 G = K/(T*s+1)
 
 f = 0.080; // Frecuencia
+repf = repfreq(G,f) // Respuesta compleja
+[dB,phi] = dbphi(repf) // Magnitud y fase
+
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo
 M = 1; omega = 2*%pi*f; u = M*sin(omega*t); // Entrada
 y = csim(u,t,G); // Respuesta temporal
-repf = repfreq(G,f) // Respuesta compleja
-[dB,phi] = dbphi(repf) // Magnitud y fase
 
 scf(1); clf(1);
 plot(t,u,t,y);

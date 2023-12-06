@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P305.sce
 s = syslin('c',%s,1);
 
@@ -36,7 +36,7 @@ subplot(2,1,2); phaseplot(G,fmin,fmax); plot(fr,phir,'ro')
 scf(4); clf(4);
 nyquist(G,fmin,fmax,%f)
 plot(real(repfr),imag(repfr),'ro');
-xtitle('Sistema de segundo orden subamortiguado - Diagrama de Nyquist','','');
+xtitle('','','');
 a4 = gca; 
 a4.x_location = 'origin'; 
 a4.y_location = 'origin'; 

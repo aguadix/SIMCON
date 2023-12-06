@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P303.sce
 s = syslin('c',%s,1);
 
@@ -7,11 +7,12 @@ K = 2; T1 = 5; T2 = 2;
 G = K/((T1*s+1)*(T2*s+1))  
 
 f = 0.051; // Frecuencia
+repf = repfreq(G,f) // Respuesta compleja
+[dB,phi] = dbphi(repf) // Magnitud y fase
+
 ciclos = 10; tfin = ciclos/f; dt = tfin/200; t = 0:dt:tfin; // Tiempo
 M = 1; omega = 2*%pi*f; u = M*sin(omega*t);  // Entrada
 y = csim(u,t,G);  // Respuesta temporal
-repf = repfreq(G,f) // Respuesta compleja
-[dB,phi] = dbphi(repf) // Magnitud y fase
 
 scf(1); clf(1); 
 plot(t,u,t,y);
@@ -29,7 +30,7 @@ subplot(2,1,2); phaseplot(G,fmin,fmax); plot(f,phi,'ro')
 scf(4); clf(4);
 nyquist(G,fmin,fmax,%f)
 plot(real(repf),imag(repf),'ro');
-xtitle('Sistema de segundo orden sobreamortiguado - Diagrama de Nyquist','','');
+xtitle('','','');
 a4 = gca; 
 a4.x_location = 'origin'; 
 a4.y_location = 'origin'; 
