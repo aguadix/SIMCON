@@ -1,4 +1,4 @@
-clear; clc; 
+clear; clc;
 // P502.sce
 s = syslin('c',%s,1);
 
@@ -21,7 +21,7 @@ fin = roots(Grl.num)
 Kcmax = 100;
 scf(1); clf(1); 
 evans(Grl,Kcmax); 
-xtitle('Lugar de las raíces','','');
+xtitle('','','');
 a1 = gca(); 
 a1.x_location = 'origin'; 
 a1.y_location = 'origin'; 
@@ -57,4 +57,4 @@ offset = e($)
 
 scf(2); clf(2); 
 plot(t,y); 
-xgrid; xtitle('Respuesta temporal a escalón', 't', 'y');
+xgrid; xlabel('t'); ylabel('y');

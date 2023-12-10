@@ -47,7 +47,7 @@ xtitle('Optimización con el algoritmo Nelder-Mead','Kc','Ti');
 xoptguess = [Kcoptguess,Tioptguess];
 yoptguess = f(xoptguess);
 scf(2); clf(2);
-xgrid; xtitle('Respuesta temporal a escalón','t','y');
+xgrid; xlabel('t'); ylabel('y');
 plot(t,yoptguess,'g-');
 ISEguess = fobj(xoptguess)
 
