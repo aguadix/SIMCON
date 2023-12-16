@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P501.sce
 s = syslin('c',%s,1);
 
@@ -31,8 +31,7 @@ a1.children.children(1).foreground = 2;
 a1.children.children(1).thickness = 3;
 
 // Controlador
-Kc = 1; 
-P = Kc; I = 0; D = 0; // P
+Kc = 1;  P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo

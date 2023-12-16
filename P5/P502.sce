@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P502.sce
 s = syslin('c',%s,1);
 
@@ -37,8 +37,7 @@ a1.children.children(2).thickness = 3;
 Kc2 = krac2(Grl)
  
 // Controlador
-Kc = 0.5;
-P = Kc; I = 0; D = 0; // P
+Kc = 0.5; P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Regulador

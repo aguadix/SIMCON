@@ -12,9 +12,9 @@ Kv = 0.5; Tv = 1; Gv = Kv/(Tv*s+1)
 Gm = 1 
 
 // Controlador
-// Kc = 12; P = Kc; I = 0; D = 0;  // P
-// Kc = 12; Ti = 16; P = Kc; I = Kc/Ti; D = 0; // PI
-Kc = 12; Ti = 16; Td = 2.3; P = Kc; I = Kc/Ti; D = Kc*Td; // PID
+   Kc = 12;                    P = Kc; I = 0;     D = 0;     // P
+// Kc = 12; Ti = 16;           P = Kc; I = Kc/Ti; D = 0;     // PI
+// Kc = 12; Ti = 16; Td = 2.3; P = Kc; I = Kc/Ti; D = Kc*Td; // PID
 Gc = P + I/s + D*s 
 
 // Función de transferencia en lazo cerrado (servomecanismo)

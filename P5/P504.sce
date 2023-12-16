@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P504.sce
 s = syslin('c',%s,1);
 
@@ -51,8 +51,7 @@ Kc2 = krac2(Grl)
 [Kcu,omegaui] = kpure(Grl) 
 
 // Controlador
-Kc = 5; 
-P = Kc; I = 0; D = 0; // P
+Kc = 5;  P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo

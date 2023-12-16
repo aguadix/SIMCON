@@ -15,9 +15,9 @@ Kv = 1; Tv = 1; Gv = Kv/(Tv*s+1)
 Gm = 1 
 
 // Controlador
-// Kc = 9.0; P = Kc; I = 0; D = 0;  // P
-// Kc = 9.0; Ti = 2*8.5; P = Kc; I = Kc/Ti; D = 0; // PI
-Kc = 9.0; Ti = 2*8.5; Td = 6.4; P = Kc; I = Kc/Ti; D = Kc*Td; // PID
+   Kc = 9.0;                       P = Kc; I = 0;     D = 0;     // P
+// Kc = 9.0; Ti = 2*8.5;           P = Kc; I = Kc/Ti; D = 0;     // PI
+// Kc = 9.0; Ti = 2*8.5; Td = 6.4; P = Kc; I = Kc/Ti; D = Kc*Td; // PID
 Gc = P + I/s + D*s 
 
 // Función de transferencia en lazo cerrado (regulador)
