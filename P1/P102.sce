@@ -56,7 +56,7 @@ B = J(1,2)
 C = 1
 SL = syslin('c',A,B,C)
 
-// (b) FUNCIÓN DE TRANSFERENCIA
+// (c) FUNCIÓN DE TRANSFERENCIA
 
 s = syslin('c',%s,1);
 G = B/(s-A)

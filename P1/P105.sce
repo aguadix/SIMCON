@@ -68,7 +68,7 @@ B = J(:,3)
 C = [0,1]
 SL = syslin('c',A,B,C)
 
-// (b) FUNCIÓN DE TRANSFERENCIA
+// (c) FUNCIÓN DE TRANSFERENCIA
 
 s = syslin('c',%s,1);
 G = (B(2,1)*s+A(2,1)*B(1,1)-A(1,1)*B(2,1))/(s^2-(A(1,1)+A(2,2))*s+A(1,1)*A(2,2)-A(1,2)*A(2,1))
