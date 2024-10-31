@@ -1,3 +1,3 @@
 # SIMULACIÓN Y CONTROL DE PROCESOS
 
- Grado en Ingeniería Química (2023-2024)
+ Grado en Ingeniería Química (2024-2025)
