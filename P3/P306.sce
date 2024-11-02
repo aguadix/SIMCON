@@ -1,8 +1,8 @@
-clear; clc;
+clear; clc; 
 // P306.sce
 s = syslin('c',%s,1);
 
-// Sistema de segundo orden sobreamortiguado con numerado
+// Sistema de segundo orden sobreamortiguado con numerador dinámico
 K = 1; T1 = 4; T2 = 1; Tn = 8; 
 G = K*(Tn*s+1)/((T1*s+1)*(T2*s+1)) 
 

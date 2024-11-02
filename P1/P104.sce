@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P104.sce
 
 // (a) CÁLCULO DEL ESTADO ESTACIONARIO

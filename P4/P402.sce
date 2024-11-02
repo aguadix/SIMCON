@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P402.sce
 s = syslin('c',%s,1);
 

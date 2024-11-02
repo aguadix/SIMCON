@@ -1,4 +1,4 @@
-clear; clc;
+clear; clc; 
 // P202.sce
 s = syslin('c',%s,1);
 
@@ -11,15 +11,15 @@ function pade = pade(td,n)
     pade = (1+sum(num))/(1+sum(den))
 endfunction 
 
-K = 3; T = 2; td = 5; n = 1; 
+K = 3; T = 2; td = 5; n = 10; 
 G = K*pade(td,n)/(T*s+1)
 
 // Respuesta temporal
 dt = 0.01; tfin = 20; t = 0:dt:tfin;
-u = 'step';
+u = 'impuls';
+// u = 'step';
 y = csim(u,t,G);  
 
 scf(1); clf(1); 
 plot(t,y);
-plot(td+T,y(t==td+T),'ro');
 xgrid; xlabel('t'); ylabel('y');
