@@ -1,5 +1,5 @@
-clear; clc; 
-// P20a1.sce
+clear; clc;
+// P201a.sce
 s = syslin('c',%s,1);
 
 // Sistema de primer orden

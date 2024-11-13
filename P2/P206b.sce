@@ -1,5 +1,5 @@
 clear; clc;
-// P206a.sce
+// P206b.sce
 s = syslin('c',%s,1);
 
 // Sistema de segundo orden sobreamortiguado con numerador dinámico
@@ -27,7 +27,7 @@ a1.box = 'off';
 
 // Respuesta temporal
 dt = 0.01; tfin = 40; t = 0:dt:tfin;
-u = 'impuls';
+u = 'step';
 y = csim(u,t,G);  
 
 scf(2); clf(2); 

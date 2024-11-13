@@ -19,7 +19,7 @@ a1.isoview = 'on';
 a1.box = 'off';
 
 // Respuesta temporal
-dt = 0.01; tfin = 30; t = 0:dt:tfin;
+dt = 0.01; tfin = 10; t = 0:dt:tfin;
 u = 'step';
 y = csim(u,t,G);  
 

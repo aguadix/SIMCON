@@ -16,10 +16,9 @@ G = K*pade(td,n)/(T*s+1)
 
 // Respuesta temporal
 dt = 0.01; tfin = 20; t = 0:dt:tfin;
-u = 'impuls';
-// u = 'step';
+u = 'step';
 y = csim(u,t,G);  
 
-scf(1); clf(1); 
+scf(2); clf(2); 
 plot(t,y);
 xgrid; xlabel('t'); ylabel('y');
