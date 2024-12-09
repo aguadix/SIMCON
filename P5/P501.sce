@@ -1,4 +1,4 @@
-clear; clc;  
+clear; clc;
 // P501.sce
 s = syslin('c',%s,1);
 
@@ -24,23 +24,24 @@ xtitle('','','');
 a1 = gca(); 
 a1.x_location = 'origin'; 
 a1.y_location = 'origin'; 
-db = 1; a1.data_bounds = [-db,-db;db,db];
+db = 3; a1.data_bounds = [-db,-db;db,db];
 a1.isoview = 'on';
 a1.box = 'off';
 a1.children.children(1).foreground = 2;
 a1.children.children(1).thickness = 3;
 
 // Controlador
-Kc = 1;  P = Kc; I = 0; D = 0; // P
+Kc = 1/(Kv*Kp) * 9  
+P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo
-Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)  // Servomecanismo
+Gcl = Gc*Gv*Gp/(1+Gm*Gc*Gv*Gp)
 polos = roots(Gcl.den)
 plot(real(polos),imag(polos),'ko');
 
 // Respuesta temporal a escalón
-dt = 0.01; tfin = 20; t = 0:dt:tfin;
+dt = 0.01; tfin = 10; t = 0:dt:tfin;
 u = 'step';
 y = csim(u,t,Gcl);
 e = 1 - y;

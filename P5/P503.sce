@@ -1,9 +1,13 @@
-clear; clc;  
+clear; clc;
 // P503.sce
 s = syslin('c',%s,1);
 
 // Proceso de segundo orden con numerador dinámico
-Kp = 4; Tpn = 1; Tp1 = 0.5; Tp2 = 0.25; 
+Kp = 4; 
+Tpn = 1; 
+// Tpn = 1/3; 
+// Tpn = 1/10; 
+Tp1 = 1/2; Tp2 = 1/4; 
 Gp = Kp*(Tpn*s+1)/((Tp1*s+1)*(Tp2*s+1))
 
 // Válvula ideal
@@ -24,7 +28,7 @@ xtitle('','','');
 a1 = gca(); 
 a1.x_location = 'origin'; 
 a1.y_location = 'origin'; 
-db = 6; a1.data_bounds = [-db,-db;db,db];
+db = 20; a1.data_bounds = [-db,-db;db,db];
 a1.isoview = 'on';
 a1.box = 'off';
 a1.children.children(1).foreground = 13;
@@ -34,12 +38,22 @@ a1.children.children(2).thickness = 3;
 
 // Ganancia para polos reales dobles
 Kc2 = krac2(Grl)
- 
-// Ganancia para polos imaginarios puros
-[Kcu,omegaui] = kpure(Grl) 
+Kc2at = 1/(Kv*Kp) * (2*Tp1*Tp2-Tpn*Tp1-Tpn*Tp2 - 2*sqrt(Tp1*Tp2*(Tp1*Tp2 + Tpn*(Tpn-Tp1-Tp2))))/Tpn^2
+Kc2bt = 1/(Kv*Kp) * (2*Tp1*Tp2-Tpn*Tp1-Tpn*Tp2 + 2*sqrt(Tp1*Tp2*(Tp1*Tp2 + Tpn*(Tpn-Tp1-Tp2))))/Tpn^2
+
+// Ganancia para zmin
+Kczmin = 1/(Kv*Kp) * (Tp1+Tp2-2*Tpn)/Tpn
 
 // Controlador
-Kc = 0.1;  P = Kc; I = 0; D = 0; // P
+Kc = 1; 
+// Kc = Kc2at/2  
+// Kc = Kc2at
+// Kc = 0.9*Kczmin
+// Kc = Kczmin
+// Kc = 1.1*Kczmin
+// Kc = Kc2bt
+// Kc = 2*Kc2bt
+P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo

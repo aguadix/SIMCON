@@ -1,4 +1,4 @@
-clear; clc;  
+clear; clc;
 // P502.sce
 s = syslin('c',%s,1);
 
@@ -35,9 +35,13 @@ a1.children.children(2).thickness = 3;
 
 // Ganancia para polos reales dobles
 Kc2 = krac2(Grl)
+Kc2t = 1/(Kv*Kp) * ((Tp1+Tp2)^2/(4*Tp1*Tp2)-1)
  
 // Controlador
-Kc = 0.5; P = Kc; I = 0; D = 0; // P
+Kc = Kc2/2
+// Kc = Kc2
+// Kc = 1/(Kv*Kp) * ((Tp1+Tp2)^2/(Tp1*Tp2)-1)
+P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Regulador

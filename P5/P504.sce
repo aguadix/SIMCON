@@ -1,20 +1,10 @@
-clear; clc;  
+clear; clc;
 // P504.sce
 s = syslin('c',%s,1);
-
-function pade = pade(td,n) 
-    for j=1:n 
-        num(j) = ( factorial(2*n-j) * factorial(n) * (-td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
-        den(j) = ( factorial(2*n-j) * factorial(n) * ( td*%s)^j ) / ( factorial(2*n) * factorial(j) * factorial(n-j) )
-    end
-    pade = (1+sum(num))/(1+sum(den))
-endfunction 
 
 // Proceso de segundo orden sobreamortiguado
 Kp = 1; Tp1 = 5; Tp2 = 1; 
 Gp = Kp/((Tp1*s+1)*(Tp2*s+1))
-// Gp = Gp*3.96  // Comprueba margen de ganancia
-// Gp = Gp*pade(1.17,5) // Comprueba margen de fase
 
 // Válvula de primer orden
 Kv = 1; Tv = 0.5; Gv = Kv/(Tv*s+1) 
@@ -34,7 +24,7 @@ xtitle('','','');
 a1 = gca(); 
 a1.x_location = 'origin'; 
 a1.y_location = 'origin'; 
-db = 5; a1.data_bounds = [-db,-db;db,db];
+db = 4; a1.data_bounds = [-db,-db;db,db];
 a1.isoview = 'on';
 a1.box = 'off';
 a1.children.children(1).foreground = 5;
@@ -46,12 +36,24 @@ a1.children.children(3).thickness = 3;
 
 // Ganancia para polos reales dobles
 Kc2 = krac2(Grl)
- 
+A = Tv*Tp1*Tp2;
+B = Tv*Tp1+Tv*Tp2+Tp1*Tp2;
+C = Tv+Tp1+Tp2;
+D = (9*A*B*C - 2*B^3 + 2*sqrt(27*(A^2*B^2*C^2 - A^3*C^3) + B^6 - 9*A*B^4*C )) / (27*A^2)
+Kc2t = 1/(Kv*Kp) * (D-1)
+
 // Ganancia para polos imaginarios puros
 [Kcu,omegaui] = kpure(Grl) 
+Kcut = 1/(Kv*Kp) * ((1/Tv+1/Tp1+1/Tp2)*(Tv+Tp1+Tp2) - 1)
+omegaut = sqrt((Tv+Tp1+Tp2)/(Tv*Tp1*Tp2))
 
 // Controlador
-Kc = 5;  P = Kc; I = 0; D = 0; // P
+Kc = Kc2/2  
+// Kc = Kc2  
+// Kc = (Kc2+Kcu)/2
+// Kc = Kcu  
+// Kc = 1.5*Kcu
+P = Kc; I = 0; D = 0; // P
 Gc = P + I/s + D*s
 
 // Servomecanismo
