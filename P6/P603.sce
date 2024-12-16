@@ -1,5 +1,5 @@
-clear; clc;
-// P603a1.sce
+clear; clc; 
+// P603.sce
 s = syslin('c',%s,1); 
 
 // Proceso de segundo orden críticamente amortiguado
@@ -14,10 +14,7 @@ Kv = 1; Tv = 1; Gv = Kv/(Tv*s+1)
 Gm = 1
 
 // Controlador PI
-Ti = 30;
-Grl = (1+1/(Ti*s))*Gp*Gv*Gm;
-Kcu = kpure(Grl)
-Kc = 15; // Tantear Kc < Kcu para ISEmin
+Kc = 1; Ti = 10; // Tantear para ISEmin
 P = Kc; I = Kc/Ti; D = 0;
 Gc = P + I/s + D*s
 

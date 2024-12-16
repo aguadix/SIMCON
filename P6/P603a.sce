@@ -1,5 +1,5 @@
-clear; clc;
-// P603b1.sce
+clear; clc; 
+// P603a.sce
 s = syslin('c',%s,1); 
 
 // Proceso de segundo orden críticamente amortiguado
@@ -18,7 +18,7 @@ dt = 0.01; tfin = 500; t = 0:dt:tfin;
 u = 'step';
 
 function y = f(x)
-    Kc = x(1); Ti = x(2);
+    Kc = x; Ti = 10;
     P = Kc; I = Kc/Ti; D = 0; // Controlador PI
     Gc = P + I/s + D*s;
     Gcl = Gd/(1+Gm*Gc*Gv*Gp); // Regulador
@@ -33,8 +33,8 @@ function ISE = fobj(x)
 endfunction
 
 // Valores óptimos supuestos
-Kcoptguess = 10; Tioptguess = 10;
-xoptguess = [Kcoptguess,Tioptguess];
+Kcoptguess = 1;
+xoptguess = Kcoptguess;
 yoptguess = f(xoptguess);
 ISEguess = fobj(xoptguess)
 
@@ -42,12 +42,12 @@ scf(1); clf(1);
 plot(t,yoptguess,'g-');
 xgrid; xlabel('t'); ylabel('y');
 
-// Determinar Kc y Ti para minimizar ISE
+// Determinar Kc para minimizar ISE
 options = optimset ('Display','iter');
 [xopt,fobjmin,exitflag,output] = fminsearch(fobj,xoptguess,options)
 
 // Valores óptimos calculados
-Kcopt = xopt(1), Tiopt = xopt(2)
+Kcopt = xopt
 ISEmin = fobjmin
 
 yopt = f(xopt);
